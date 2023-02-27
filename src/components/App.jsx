@@ -29,12 +29,9 @@ export class App extends Component {
   };
 
   onDeleteHandler = id => {
-    const filteredContacts = this.state.contacts.filter(
-      contact=> contact.id !== id
-    )
-    this.setState(prevState => {
-      return{...prevState, contacts:[...filteredContacts]}
-    })
+    this.setState(prevState => ({
+      contacts:prevState.contacts.filter(contact => contact.id !== id),
+    }))
   }
 
   onFilterContacts = () => {
